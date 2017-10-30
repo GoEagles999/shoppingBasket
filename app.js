@@ -19,6 +19,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', function(req,res,next) {
+  res.render('index',{title: 'Shopping Basket'})
+})
+
 app.post('/addToBasket', function (req,res,next) {
   // change item prices here
   const APPLE_PRICE = 25,
