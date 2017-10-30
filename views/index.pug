@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.0/axios.js')
+  script(src='/javascripts/shoppingBasketLogic.js')
+  h1(id='header') Shopping Basket
+  p(class='toRemove') Buy Apples
+  input(id='appleQuantity', class='toRemove', type='text', placeholder='Quantity')
+  p(class='toRemove') Buy Oranges
+  input(id='orangeQuantity', class='toRemove', type='text', placeholder='Quantity')
+  p(class='toRemove') Buy Garlic
+  input(id='garlicQuantity', class='toRemove', type='text', placeholder='Quantity')
+  p(class='toRemove') Buy Papaya (get 3 for the price of 2)
+  input(id='papayaQuantity', class='toRemove', type='text', placeholder='Quantity')
+  div(id='wrongNumberOfPapayas', style='display:none;color:red')
+  button(id='checkOutButton', onclick='checkOut()') Checkout
+  div(id='done')
